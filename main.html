@@ -4,13 +4,47 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
-	<style></style>
+	<style>
+		body {
+			font-family:Arial, sans-serif;
+			margin: 20px;
+		}
+		input, button {
+			padding:10px;
+			margin-top:10px;
+		}
+	</style>
 </head>
 
 <body>
 	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <!-- <script type="text/javascript" src="./script.js">
+</script> -->
+
+	<h1>Celcius to Fahrenheit Converter</h1>
+	<label for="CelciusInput">Enter Temperature in Celcius:</label>
+	<input type="number " id="CelciusInput" placeholder="°C" />
+	<button onclick="converttofahrenheit()">Convert</button>
+
+	<script>
+		function tofahrenheit(celcius) {
+			// checj=k if the input is within tyhe specified range
+			if(celcius < -273.15 || celcius > 10^9) {
+				return "Input temperature is out of range.";
+			}
+			// convert celcius to fahrenheit
+			let fahrenheit = (celcius * 9/5) + 32;
+
+			// return the result rounded to two decimal places
+			return fahrenheit.toFixed(2);
+		}
+
+		function convertToFahrenheit() {
+			const celcius = parseFloat(document.getElementById('CelciusInput').value);
+			const result = tofahrenheit(celcius);
+			alert(`Temperature in Fahrenheit: ${result} °F`);
+		}
+	</script>
 
 </body>
 
